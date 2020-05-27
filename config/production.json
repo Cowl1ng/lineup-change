@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://luke1235:luke1235@contactkeeper-e0kws.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret",
+  "jwtExpiresIn": "360000"
+}

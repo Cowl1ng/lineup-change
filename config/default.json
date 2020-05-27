@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://Cowl1ng:la6veM0KOJs@cluster0-hmnod.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret",
+  "jwtExpiresIn": "360000"
+}
