@@ -45,6 +45,7 @@ router.get('/', auth, async (req, res) => {
       midfielders: midfielders,
       forwards: forwards,
       subs: subs,
+      players: players,
     })
   } catch (error) {
     console.error(error.message)
@@ -56,8 +57,26 @@ router.get('/', auth, async (req, res) => {
 // @desc      Update starting lineup
 // @ access   Private
 
-router.get('/', auth, async (req, res) => {
-  user = await User.findById(req.user._id)
+router.put('/', auth, async (req, res) => {
+  const { player1, player2 } = req.body
+  try {
+    updated1 = await Player.findOneAndUpdate(
+      { name: player1.name },
+      {
+        playing: player1.playing,
+      }
+    )
+    updated2 = await Player.findOneAndUpdate(
+      { name: player2.name },
+      {
+        playing: player2.playing,
+      }
+    )
+    res.json({ updated1, updated2 })
+  } catch (error) {
+    console.error(error.message)
+    res.status(500).send('Server Error')
+  }
 })
 // Export router for use in server.js
 module.exports = router
