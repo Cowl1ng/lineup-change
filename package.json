@@ -1,6 +1,9 @@
 {
   "name": "react-simsports",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.16.2"
+  },
   "description": "Simsports using react",
   "main": "server.js",
   "scripts": {
